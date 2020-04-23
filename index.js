@@ -8,16 +8,16 @@ var port = process.env.PORT || 3000;
     var obj = url.parse(req.url, true).query;
     var name = obj.company_name;
     var ticker = obj.ticker;
-//     res.write("Name: " + name + " <br> Ticker: " + ticker);
+    res.write("Name: " + name + " <br> Ticker: " + ticker);
     
-    // connect to MongoDB
-//      const MongoClient = require('mongodb').MongoClient;
+    connect to MongoDB
+     const MongoClient = require('mongodb').MongoClient;
 
-//      const uri = "mongodb+srv://spencergallant:inkheart3115@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
+     const uri = "mongodb+srv://spencergallant:inkheart3115@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
 
-//      const client = new MongoClient(uri, { useUnifiedTopology: true });
+     const client = new MongoClient(uri, { useUnifiedTopology: true });
     
-//      connect(client, name, ticker, res);
+     connect(client, name, ticker, res);
   //res.end();
 //   var test = qobj.x;
    res.end();
