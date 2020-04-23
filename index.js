@@ -3,16 +3,16 @@ var url = require('url');
 var port = process.env.PORT || 3000;
 
 
- http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-pe': 'text/html'});
-     res.write("<h1> HELLO <h1>");
-     res.end();
+//  http.createServer(function (req, res) {
+//     res.writeHead(200, {'Content-pe': 'text/html'});
+//      res.write("<h1> HELLO <h1>");
+//      res.end();
         
-//     if (req.url === '/favicon.ico') {
-//         console.log("MAKES IT HERE");	
-//         res.writeHead(200, {'Content-pe': 'image/x-icon'});
-//         // return;
-//     }  
+    if (req.url === '/favicon.ico') {
+        console.log("MAKES IT HERE");	
+        res.writeHead(200, {'Content-pe': 'image/x-icon'});
+        // return;
+    }  
 
 //     res.writeHead(200, {'Content-Type': 'text/html'});
 //     var obj = url.parse(req.url, true).query;
@@ -30,6 +30,7 @@ var port = process.env.PORT || 3000;
     
 //     connect(client, name, ticker, res);
 //     //res.end();
+ res.end();
  }).listen(port);
 
 // async function connect(client, name, ticker, res) {
