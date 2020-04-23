@@ -14,7 +14,7 @@ var port = process.env.PORT || 3000;
     //connect to MongoDB
      const MongoClient = require('mongodb').MongoClient;
 
-     const uri = "mongodb+srv://spencergallant:inkheart3115@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
+     const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
 
      const client = new MongoClient(uri, { useUnifiedTopology: true });
     
