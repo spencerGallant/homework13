@@ -8,7 +8,7 @@ var port = process.env.PORT || 3000;
     var qobj = url.parse(req.url, true).query;
     var name = obj.company_name;
     var ticker = obj.ticker;
-    res.write("Name: " + name + " <br> Ticker: " + ticker);
+//     res.write("Name: " + name + " <br> Ticker: " + ticker);
     
     // connect to MongoDB
 //      const MongoClient = require('mongodb').MongoClient;
