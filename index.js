@@ -25,12 +25,14 @@ var port = process.env.PORT || 3000;
  }).listen(port);
 
 async function connect(client, name, ticker, res) {
+     res.write("connect");
     client.connect(err => {
         const collection = client.db("homework13").collection("companies");
         res.write("success connecting!");
 
         collection.find().toArray(function (err, items) {
             if (err) {
+                res.write("error");
                 console.log("Error: " + err);
                 return;
             }
