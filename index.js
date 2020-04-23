@@ -7,6 +7,7 @@ var port = process.env.PORT || 3000;
     res.writeHead(200, {'Content-Type': 'text/html'});
    res.write(req.url);
     var obj = url.parse(req.url, true).query;
+   res.write(obj);
     var name = obj.company_name;
     var ticker = obj.ticker;
     res.write("Name: " + name + " <br> Ticker: " + ticker);
