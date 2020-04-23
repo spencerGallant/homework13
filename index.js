@@ -8,11 +8,12 @@ var port = process.env.PORT || 3000;
 //      res.write("<h1> HELLO <h1>");
 //      res.end();
         
-//     if (req.url === '/favicon.ico') {
+    if (req.url === '/favicon.ico') {
+     res.write("uh oh");
 //         console.log("MAKES IT HERE");	
 //         res.writeHead(200, {'Content-pe': 'image/x-icon'});
 //         // return;
-//     }  
+   }  
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     var obj = url.parse(req.url, true).query;
@@ -28,7 +29,7 @@ var port = process.env.PORT || 3000;
 
      const client = new MongoClient(uri, { useUnifiedTopology: true });
     
-     connect(client, name, ticker, res);
+     //connect(client, name, ticker, res);
   //res.end();
    res.end();
  }).listen(port);
