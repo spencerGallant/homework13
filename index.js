@@ -30,7 +30,7 @@ var port = process.env.PORT || 3000;
     
      connect(client, name, ticker, res);
   //res.end();
-   res.end("done");
+   res.end();
  }).listen(port);
 
 // async function connect(client, name, ticker, res) {
