@@ -4,9 +4,9 @@ var port = process.env.PORT || 3000;
 
 
  http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-pe': 'text/html'});
-     res.write("<h1> HELLO <h1>");
-     res.end();
+//     res.writeHead(200, {'Content-pe': 'text/html'});
+//      res.write("<h1> HELLO <h1>");
+//      res.end();
         
 //     if (req.url === '/favicon.ico') {
 //         console.log("MAKES IT HERE");	
@@ -14,12 +14,12 @@ var port = process.env.PORT || 3000;
 //         // return;
 //     }  
 
-//     res.writeHead(200, {'Content-Type': 'text/html'});
-//     var obj = url.parse(req.url, true).query;
-//     var name = obj.company_name;
-//     var ticker = obj.ticker;
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    var obj = url.parse(req.url, true).query;
+    var name = obj.company_name;
+    var ticker = obj.ticker;
     
-//     // res.write("Name: " + name + " <br> Ticker: " + ticker);
+    res.write("Name: " + name + " <br> Ticker: " + ticker);
     
 //     // connect to MongoDB
 //     const MongoClient = require('mongodb').MongoClient;
