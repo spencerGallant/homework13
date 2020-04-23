@@ -28,7 +28,7 @@ var port = process.env.PORT || 3000;
 
      const client = new MongoClient(uri, { useUnifiedTopology: true });
     
-     //connect(client, name, ticker, res);
+     connect(client, name, ticker, res);
   //res.end();
    res.end();
  }).listen(port);
