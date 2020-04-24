@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
     // connect to MongoDB
     const MongoClient = require('mongodb').MongoClient;
 
-    const uri = "mongodb+srv://sgallant:inkheart3115@cluster0-6ztc8.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://sam:wiDKBZSMc7ncQCg6@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
 
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     
@@ -35,9 +35,7 @@ http.createServer(function (req, res) {
 
 async function connect(client, name, ticker, res) {
     client.connect(err => {
-        res.write("hero");
         const collection = client.db("Company_Tickers").collection("Company Tickers");
-        res.write("hero nope");
         console.log("success connecting!");
 
         collection.find().toArray(function (err, items) {
