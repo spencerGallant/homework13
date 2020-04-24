@@ -17,11 +17,10 @@ var port = process.env.PORT || 3000;
 
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
      console.log("entering the function");
-     var data = MongoClient.connect(uri, function(err,db){
+     MongoClient.connect(uri, function(err,db){
       res.write("entering");
 //       .get('/', function(req, res) {
-      data = db;
-      var dbo = db.data("homework13");
+      var dbo = db.db("homework13");
       var collection = dbo.collection("companies");
       console.log("Success!");
       res.write("success");
