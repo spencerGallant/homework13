@@ -26,7 +26,7 @@ var port = process.env.PORT || 3000;
       db.close()
      }
     
-     connect(client, name, ticker, res);
+     //connect(client, name, ticker, res);
   //res.end();
 //   var test = qobj.x;
    res.end();
