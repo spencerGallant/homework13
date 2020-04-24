@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
     var name = obj.company_name;
     var ticker = obj.ticker;
     
-    // res.write("Name: " + name + " <br> Ticker: " + ticker);
+    res.write("Name: " + name + " <br> Ticker: " + ticker);
     
     // connect to MongoDB
     const MongoClient = require('mongodb').MongoClient;
