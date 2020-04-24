@@ -49,12 +49,12 @@ async function connect(client, name, ticker, res) {
                 for (i = 0; i < items.length; i++) {
                     console.log("in for loop");
                     if (items[i].Company == name) {
-                        res.write(name + "'s ticker is: " + items[i].Ticker);
+                        res.write("Ticker: " + items[i].Ticker);
                         found = true;
                         break;
                     }
                     if (items[i].Ticker == ticker) {
-                        res.write(ticker + " represents " + items[i].Company);
+                        res.write("Represents: " + items[i].Company);
                         found = true;
                         break;
                     }
