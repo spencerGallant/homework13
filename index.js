@@ -61,7 +61,7 @@ async function connect(client, name, ticker, res) {
                 }
 
                 if (!found) {
-                    res.write("The company or ticker you are looking for is not in our database. Sorry!");
+                    res.write("Sorry, that company does not exist.");
                 }
             }
         });  //end find
