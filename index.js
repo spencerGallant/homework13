@@ -16,11 +16,14 @@ var port = process.env.PORT || 3000;
 
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
 
-     MongoClient.connect(uri, function(err,db){
+     var data = MongoClient.connect(uri, function(err,db){
+//       .get('/', function(req, res) {
       if(err) {
        console.log("ERROR");
        return console.log(err)
       }
+      
+      data = db;
       var dbo = db.db("homework13");
       var collection = dbo.collection("companies");
       console.log("Success!");
