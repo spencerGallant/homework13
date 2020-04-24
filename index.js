@@ -28,6 +28,7 @@ var port = process.env.PORT || 3000;
       var dbo = db.db("homework13");
       var collection = dbo.collection("companies");
       console.log("Success!");
+      res.write("success");
      });
   console.log("exited the funciton");
 //      const client = new MongoClient(uri, { useUnifiedTopology: true });
