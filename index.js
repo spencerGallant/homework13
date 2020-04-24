@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
     // connect to MongoDB
     const MongoClient = require('mongodb').MongoClient;
 
-    const uri = "mongodb+srv://sam:wiDKBZSMc7ncQCg6@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://sgallant:inkheart3115@cluster0-6ztc8.mongodb.net/test?retryWrites=true&w=majority";
 
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     
