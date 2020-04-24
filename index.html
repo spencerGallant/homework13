@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title> Companies & Tickers </title>
+    <style>
+        body {
+          text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+  <br><br>
+  Enter the Company Name or Stock Ticker to get information
+  <br><br>
+     <form method = "GET" action = "http://localhost:8080">
+       <select name="myselect">
+         <option value="0">Select</option>
+         <option value="1">Company Name</option>
+         <option value="2">Stock Ticker</option>
+       </select>
+       <input type="text" id="search_value" name="search_value">
+       <input type = "submit" name = "search" value = "Search">
+    </form>
+</body>
+</html>
