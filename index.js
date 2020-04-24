@@ -25,7 +25,7 @@ http.createServer(function (req, res) {
 
 async function connect(client, name, ticker, res) {
     client.connect(err => {
-        const collection = client.db("Company_Tickers").collection("Company Tickers");
+        const collection = client.db("homework13").collection("companies");
         console.log("success connecting!");
 
         collection.find().toArray(function (err, items) {
