@@ -28,37 +28,37 @@ async function connect(client, name, ticker, res) {
      res.write("<br> connect");
      const collection = client.db("homework13").collection("companies");
      res.write("<br> success connecting!");
-    client.connect(err => {
-        res.write("<br> moving");
+//     client.connect(err => {
+//         res.write("<br> moving");
         
 
-        collection.find().toArray(function (err, items) {
-            if (err) {
-                res.write("<br> error");
-                console.log("Error: " + err);
-                return;
-            }
-            else {
-                found = false;
+//         collection.find().toArray(function (err, items) {
+//             if (err) {
+//                 res.write("<br> error");
+//                 console.log("Error: " + err);
+//                 return;
+//             }
+//             else {
+//                 found = false;
 
-                for (i = 0; i < items.length; i++) {
-                    console.log("in for loop");
-                    if (items[i].Company == name) {
-                        res.write(name + "'s ticker is: " + items[i].Ticker);
-                        found = true;
-                        break;
-                    }
-                    if (items[i].Ticker == ticker) {
-                        res.write(ticker + " represents " + items[i].Company);
-                        found = true;
-                        break;
-                    }
-                }
+//                 for (i = 0; i < items.length; i++) {
+//                     console.log("in for loop");
+//                     if (items[i].Company == name) {
+//                         res.write(name + "'s ticker is: " + items[i].Ticker);
+//                         found = true;
+//                         break;
+//                     }
+//                     if (items[i].Ticker == ticker) {
+//                         res.write(ticker + " represents " + items[i].Company);
+//                         found = true;
+//                         break;
+//                     }
+//                 }
 
-                if (!found) {
-                    res.write("The company or ticker you are looking for is not in our database. Sorry!");
-                }
-            }
-        });  //end find
-    });
+//                 if (!found) {
+//                     res.write("The company or ticker you are looking for is not in our database. Sorry!");
+//                 }
+//             }
+//         });  //end find
+//     });
 }
