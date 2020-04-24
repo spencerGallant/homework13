@@ -16,17 +16,9 @@ var port = process.env.PORT || 3000;
 
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
 
-     MongoClient.connect(uri, { useUnifiedTopology: true }, function(er,db){
-      if(err) console.log("ERROR");
-      var dbo = db.db("homework13");
-      var collection = dbo.collection("companies");
-      
-      console.log("success");
-      
-      db.close()
-     }
+     const client = new MongoClient(uri, { useUnifiedTopology: true });
     
-     //connect(client, name, ticker, res);
+     connect(client, name, ticker, res);
   //res.end();
 //   var test = qobj.x;
    res.end();
