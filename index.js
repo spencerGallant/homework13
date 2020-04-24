@@ -49,19 +49,19 @@ async function connect(client, name, ticker, res) {
                 for (i = 0; i < items.length; i++) {
                     console.log("in for loop");
                     if (items[i].Company == name) {
-                        res.write("Ticker: " + items[i].Ticker);
+                        res.write("This ticker is: " + items[i].Ticker);
                         found = true;
                         break;
                     }
                     if (items[i].Ticker == ticker) {
-                        res.write("Represents: " + items[i].Company);
+                        res.write("This company is: " + items[i].Company);
                         found = true;
                         break;
                     }
                 }
 
                 if (!found) {
-                    res.write("Sorry, that company does not exist.");
+                    res.write("This company/ticker isn't in our database.");
                 }
             }
         });  //end find
