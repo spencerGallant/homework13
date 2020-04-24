@@ -24,8 +24,7 @@ http.createServer(function (req, res) {
 }).listen(port);
 
 async function connect(client, name, ticker, res) {
-    client.connect(err => {
-        const collection = client.db("homework13").collection("companies");
+const collection = client.db("homework13").collection("companies");
         console.log("success connecting!");
 
         collection.find().toArray(function (err, items) {
@@ -55,5 +54,4 @@ async function connect(client, name, ticker, res) {
                 }
             }
         });  //end find
-    });
 }
