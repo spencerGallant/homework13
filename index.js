@@ -16,16 +16,16 @@ var port = process.env.PORT || 3000;
      const MongoClient = require('mongodb').MongoClient;
 
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
-     console.log("entering the function");
-     MongoClient.connect(uri, name, ticker, res, function(err,db){
-      res.write("entering");
-//       .get('/', function(req, res) {
-      var dbo = db.db("homework13");
-      var collection = dbo.collection("companies");
-      console.log("Success!");
-      res.write("success");
-     });
-  console.log("exited the funciton");
+//      console.log("entering the function");
+//      MongoClient.connect(uri, name, ticker, res, function(err,db){
+//       res.write("entering");
+// //       .get('/', function(req, res) {
+//       var dbo = db.db("homework13");
+//       var collection = dbo.collection("companies");
+//       console.log("Success!");
+//       res.write("success");
+//      });
+//   console.log("exited the funciton");
 //      const client = new MongoClient(uri, { useUnifiedTopology: true });
     
 //      connect(client, name, ticker, res);
