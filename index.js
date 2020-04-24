@@ -18,6 +18,7 @@ var port = process.env.PORT || 3000;
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
      console.log("entering the function");
      var data = MongoClient.connect(uri, function(err,db){
+      res.write("entering");
 //       .get('/', function(req, res) {
       if(err) {
        res.write("fail");
