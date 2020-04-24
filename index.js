@@ -25,15 +25,19 @@ http.createServer(function (req, res) {
 }).listen(port);
 
 async function connect(client, name, ticker, res) {
-const collection = client.db("homework13").collection("companies");
-        console.log("success connecting!");
+    res.write("HELP 0");
+    const collection = client.db("homework13").collection("companies");
+    res.write("HELP 1");
+    console.log("success connecting!");
 
-        collection.find().toArray(function (err, items) {
+    collection.find().toArray(function (err, items) {
             if (err) {
+                res.write("HELP 1");
                 console.log("Error: " + err);
                 return;
             }
             else {
+                res.write("HELP 2");
                 found = false;
 
                 for (i = 0; i < items.length; i++) {
