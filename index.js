@@ -20,6 +20,7 @@ var port = process.env.PORT || 3000;
      var data = MongoClient.connect(uri, function(err,db){
 //       .get('/', function(req, res) {
       if(err) {
+       res.write("fail");
        console.log("ERROR");
        return console.log(err)
       }
