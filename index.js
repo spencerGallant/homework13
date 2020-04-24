@@ -21,7 +21,7 @@ http.createServer(function (req, res) {
     const collection = client.db("companies").collection("companies");
     res.write("HELP 1");
 
-    connect(client, name, ticker, res);
+    //connect(client, name, ticker, res);
     //res.end();
 
 }).listen(port);
