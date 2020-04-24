@@ -17,11 +17,11 @@ var port = process.env.PORT || 3000;
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
 
      MongoClient.connect(uri, { useUnifiedTopology: true }, function(er,db){
-      if(err) res.write("ERROR");
+      if(err) console.log("ERROR");
       var dbo = db.db("homework13");
       var collection = dbo.collection("companies");
       
-      res.write("success");
+      console.log("success");
       
       db.close()
      }
