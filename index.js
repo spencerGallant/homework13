@@ -2,42 +2,48 @@ var http = require('http');
 var url = require('url');
 var port = process.env.PORT || 3000;
 
+// https://www.oreilly.com/library/view/mastering-nodejs-/9781785888960/e00d3fc1-c435-488c-9aab-d81f377ffe69.xhtml
+// https://gist.github.com/kentbrew/763822
+// https://stackoverflow.com/questions/35408729/express-js-
+
 http.createServer(function (req, res) {
+
+    if (req.url === '/favicon.ico') {
+        console.log("MAKES IT HERE");	
+        res.writeHead(200, {'Content-pe': 'image/x-icon'});
+        // return;
+    }  
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     var obj = url.parse(req.url, true).query;
     var name = obj.company_name;
     var ticker = obj.ticker;
     
-    res.write("Name: " + name + " <br> Ticker: " + ticker);
+    // res.write("Name: " + name + " <br> Ticker: " + ticker);
     
     // connect to MongoDB
     const MongoClient = require('mongodb').MongoClient;
 
-    const uri = "mongodb+srv://colinjames1:jamescolin1@cluster0-ztasy.mongodb.net/test?retryWrites=true&w=majority";
-    res.write("HERE");
-    const client = new MongoClient(uri, { useUnifiedTopology: true });
-    res.write("HELP 0");
-    const collection = client.db("companies").collection("companies");
-    res.write("HELP 1");
+    const uri = "mongodb+srv://sam:wiDKBZSMc7ncQCg6@cluster0-yzdxb.mongodb.net/test?retryWrites=true&w=majority";
 
-    //connect(client, name, ticker, res);
+    const client = new MongoClient(uri, { useUnifiedTopology: true });
+    
+    connect(client, name, ticker, res);
     //res.end();
 
 }).listen(port);
 
 async function connect(client, name, ticker, res) {
-    
-    console.log("success connecting!");
+    client.connect(err => {
+        const collection = client.db("Company_Tickers").collection("Company Tickers");
+        console.log("success connecting!");
 
-    collection.find().toArray(function (err, items) {
+        collection.find().toArray(function (err, items) {
             if (err) {
-                res.write("HELP 1");
                 console.log("Error: " + err);
                 return;
             }
             else {
-                res.write("HELP 2");
                 found = false;
 
                 for (i = 0; i < items.length; i++) {
@@ -59,4 +65,5 @@ async function connect(client, name, ticker, res) {
                 }
             }
         });  //end find
+    });
 }
