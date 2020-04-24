@@ -15,7 +15,7 @@ var port = process.env.PORT || 3000;
     //connect to MongoDB
      const MongoClient = require('mongodb').MongoClient;
 
-     const uri = "mongodb+srv://spencergallant:<Inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
+     const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
      console.log("entering the function");
      MongoClient.connect(uri, name, ticker, res, function(err,db){
       res.write("entering");
