@@ -15,7 +15,7 @@ var port = process.env.PORT || 3000;
      const MongoClient = require('mongodb').MongoClient;
 
      const uri = "mongodb+srv://spencergallant:<inkheart3115>@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
-
+     console.log("entering the function");
      var data = MongoClient.connect(uri, function(err,db){
 //       .get('/', function(req, res) {
       if(err) {
@@ -28,6 +28,7 @@ var port = process.env.PORT || 3000;
       var collection = dbo.collection("companies");
       console.log("Success!");
      });
+  console.log("exited the funciton");
 //      const client = new MongoClient(uri, { useUnifiedTopology: true });
     
 //      connect(client, name, ticker, res);
