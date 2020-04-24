@@ -18,6 +18,7 @@ http.createServer(function (req, res) {
 
     const client = new MongoClient(uri, { useUnifiedTopology: true });
     
+    res.write("HERE");
     connect(client, name, ticker, res);
     //res.end();
 
