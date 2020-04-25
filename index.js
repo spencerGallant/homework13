@@ -25,18 +25,20 @@ http.createServer(function (req, res) {
     const MongoClient = require('mongodb').MongoClient;
 
     const uri = "mongodb+srv://spencergallant:inkheart3115@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
-        res.write("YAY");
+        res.write("YAY<br>");
 
     const client = new MongoClient(uri, { useUnifiedTopology: true });
-            res.write("Super YAY");
+            res.write("Super YAY<br>");
 
-    //connect(client, name, ticker, res);
+    connect(client, name, ticker, res);
     //res.end();
 
 }).listen(port);
 
 async function connect(client, name, ticker, res) {
+    res.write("just testing<br>");
     client.connect(err => {
+        res.write("WELL HERE NOW<br>");
         const collection = client.db("VolunteerData").collection("volunteers");
         res.write("SUPER YAY");
         console.log("success connecting!");
