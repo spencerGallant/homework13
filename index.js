@@ -25,47 +25,48 @@ http.createServer(function (req, res) {
     const MongoClient = require('mongodb').MongoClient;
 
     const uri = "mongodb+srv://spencergallant:inkheart3115@cluster0-avmpy.mongodb.net/test?retryWrites=true&w=majority";
+        res.write("YAY");
 
     const client = new MongoClient(uri, { useUnifiedTopology: true });
-    
-    connect(client, name, ticker, res);
+            res.write("Super YAY");
+
+    //connect(client, name, ticker, res);
     //res.end();
 
 }).listen(port);
 
 async function connect(client, name, ticker, res) {
     client.connect(err => {
-        res.write("YAY");
         const collection = client.db("VolunteerData").collection("volunteers");
         res.write("SUPER YAY");
-//         console.log("success connecting!");
+        console.log("success connecting!");
 
-//         collection.find().toArray(function (err, items) {
-//             if (err) {
-//                 console.log("Error: " + err);
-//                 return;
-//             }
-//             else {
-//                 found = false;
+        collection.find().toArray(function (err, items) {
+            if (err) {
+                console.log("Error: " + err);
+                return;
+            }
+            else {
+                found = false;
 
-//                 for (i = 0; i < items.length; i++) {
-//                     console.log("in for loop");
-//                     if (items[i].Company == name) {
-//                         res.write("This ticker is: " + items[i].Ticker);
-//                         found = true;
-//                         break;
-//                     }
-//                     if (items[i].Ticker == ticker) {
-//                         res.write("This company is: " + items[i].Company);
-//                         found = true;
-//                         break;
-//                     }
-//                 }
+                for (i = 0; i < items.length; i++) {
+                    console.log("in for loop");
+                    if (items[i].Company == name) {
+                        res.write("This ticker is: " + items[i].Ticker);
+                        found = true;
+                        break;
+                    }
+                    if (items[i].Ticker == ticker) {
+                        res.write("This company is: " + items[i].Company);
+                        found = true;
+                        break;
+                    }
+                }
 
-//                 if (!found) {
-//                     res.write("This company/ticker isn't in our database.");
-//                 }
-//             }
-//         });  //end find
+                if (!found) {
+                    res.write("This company/ticker isn't in our database.");
+                }
+            }
+        });  //end find
      });
 }
