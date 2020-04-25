@@ -37,7 +37,6 @@ http.createServer(function (req, res) {
 
 async function connect(client, name, ticker, res) {
     res.write("just testing<br>");
-    client.connect(err => {
         res.write("WELL HERE NOW<br>");
         const collection = client.db("VolunteerData").collection("volunteers");
         res.write("SUPER YAY");
@@ -69,6 +68,5 @@ async function connect(client, name, ticker, res) {
                     res.write("This company/ticker isn't in our database.");
                 }
             }
-        });  //end find
      });
 }
